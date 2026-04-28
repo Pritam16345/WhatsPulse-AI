@@ -33,6 +33,7 @@ yarn-error.log*
 backend/uploads/
 *.txt
 !backend/stop_hinglish.txt
+!backend/requirements.txt
 *.zip
 *.jpg
 *.ipynb
