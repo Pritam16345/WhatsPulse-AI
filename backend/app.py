@@ -369,4 +369,7 @@ def export_csv():
 
 if __name__ == '__main__':
     _schedule_cleanup()
-    app.run(debug=True, port=5000)
+    # Use PORT from env for Render, default to 5000 for local
+    port = int(os.environ.get("PORT", 5000))
+    # host='0.0.0.0' is required for external access in deployment
+    app.run(host='0.0.0.0', port=port, debug=os.environ.get('FLASK_ENV') == 'development')
